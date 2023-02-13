@@ -49,8 +49,8 @@ public class GRPCClientService {
     ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
                                  .usePlaintext()
                                  .build();
-    MatrixServiceGrpc.MatrixServiceBlockingStub stub =
-        MatrixServiceBlockingStub.newBlockingStub(channel);
+		MatrixServiceGrpc.MatrixServiceBlockingStub stub
+		 = MatrixServiceGrpc.newBlockingStub(channel);
     MatrixReply A = stub.multBlock(MatrixRequest.newBuilder()
                                        .setA00(1)
                                        .setA01(2)
